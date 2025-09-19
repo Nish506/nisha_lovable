@@ -2,69 +2,74 @@ import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, Heart } from "lucide-react";
 
 const Contact = () => {
-  const contactLinks = [
+  const contactMethods = [
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:your.email@example.com",
-      color: "bg-primary hover:bg-primary/90"
+      value: "hello@yourname.com",
+      href: "mailto:hello@yourname.com"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
-      color: "bg-secondary hover:bg-secondary/90"
+      value: "Connect with me",
+      href: "https://linkedin.com/in/yourprofile"
     },
     {
       icon: Github,
       label: "GitHub", 
-      href: "https://github.com/yourusername",
-      color: "bg-accent hover:bg-accent/90"
+      value: "View my code",
+      href: "https://github.com/yourusername"
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-muted/20">
+    <section className="py-20 px-6 bg-muted/20 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center">
-        {/* Decorative floating elements */}
+        {/* Organic floating elements */}
         <div className="relative">
-          <div className="absolute -top-10 left-1/4 w-8 h-8 bg-primary rounded-full opacity-40 animate-float" />
-          <div className="absolute -top-5 right-1/4 w-6 h-6 bg-secondary rounded-full opacity-50 animate-bounce-gentle" />
+          <div className="absolute -top-10 left-1/4 w-12 h-12 bg-primary/20 rounded-full opacity-60 animate-organic-float" />
+          <div className="absolute -top-5 right-1/4 w-8 h-8 bg-secondary/30 rounded-full opacity-70 animate-leaf-sway" />
+          <div className="absolute bottom-10 left-10 w-16 h-16 bg-accent/20 rounded-full opacity-50 animate-bounce-gentle" />
         </div>
 
-        <div className="animate-fade-in-up">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-raleway font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-foreground">
-            Let's Connect
+            Plant Seeds Together
           </h2>
-          
-          <p className="font-poppins text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Ready to bring your ideas to life? I'd love to hear about your project and explore how we can create something amazing together.
+          <p className="font-poppins text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Ready to cultivate something beautiful? Let's grow your ideas into flourishing digital experiences.
           </p>
+        </div>
 
-          {/* Contact buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            {contactLinks.map((link, index) => (
-              <Button
+        <div className="max-w-2xl mx-auto bg-gradient-card rounded-3xl p-8 md:p-12 border-2 border-border/30 shadow-lg animate-scale-in relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full -translate-y-10 translate-x-10 animate-organic-float" />
+          <div className="absolute bottom-0 left-0 w-16 h-16 bg-secondary/5 rounded-full translate-y-8 -translate-x-8 animate-leaf-sway" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            {contactMethods.map((method, index) => (
+              <a
                 key={index}
-                asChild
-                size="lg"
-                className={`${link.color} text-white font-poppins font-medium px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group`}
+                href={method.href}
+                className="group flex flex-col items-center text-center p-6 rounded-2xl hover:bg-muted/30 transition-all duration-300 hover:scale-105 hover:bg-primary/5"
               >
-                <a href={link.href} target="_blank" rel="noopener noreferrer">
-                  <link.icon className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
-                  {link.label}
-                </a>
-              </Button>
+                <div className="bg-primary/90 rounded-full p-4 mb-4 group-hover:scale-110 group-hover:bg-primary transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-background/10 to-transparent rounded-full" />
+                  <method.icon className="w-6 h-6 text-primary-foreground relative z-10" />
+                </div>
+                <h3 className="font-raleway font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">
+                  {method.label}
+                </h3>
+                <p className="font-poppins text-muted-foreground group-hover:text-foreground transition-colors">
+                  {method.value}
+                </p>
+              </a>
             ))}
           </div>
 
-          {/* Closing message */}
-          <div className="bg-background/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border-2 border-border/30">
-            <p className="font-poppins text-lg text-muted-foreground flex items-center justify-center gap-2">
-              Made with <Heart className="w-5 h-5 text-primary animate-bounce-gentle" fill="currentColor" /> 
-              and lots of creativity
-            </p>
-          </div>
+          <p className="font-poppins text-lg text-muted-foreground animate-fade-in-up relative z-10" style={{ animationDelay: '200ms' }}>
+            Thank you for wandering through my creative garden. May our collaboration bloom into something extraordinary! 🌿
+          </p>
         </div>
       </div>
     </section>

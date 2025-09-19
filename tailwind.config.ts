@@ -108,6 +108,15 @@ export default {
         "scale-in": {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" }
+        },
+        "organic-float": {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "33%": { transform: "translateY(-8px) rotate(1deg)" },
+          "66%": { transform: "translateY(-4px) rotate(-1deg)" }
+        },
+        "leaf-sway": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(3deg)" }
         }
       },
       animation: {
@@ -117,6 +126,8 @@ export default {
         "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
+        "organic-float": "organic-float 4s ease-in-out infinite",
+        "leaf-sway": "leaf-sway 3s ease-in-out infinite",
       },
     },
   },

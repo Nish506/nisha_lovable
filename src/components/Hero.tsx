@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import heroDoodles from "@/assets/hero-doodles.jpg";
+import natureHeroBg from "@/assets/nature-hero-bg.jpg";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -9,18 +9,22 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Doodle Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+      {/* Nature Background */}
       <div 
-        className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroDoodles})` }}
+        className="absolute inset-0 opacity-30 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${natureHeroBg})` }}
       />
       
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-12 h-12 bg-primary rounded-full animate-float opacity-60" />
-      <div className="absolute top-40 right-20 w-8 h-8 bg-secondary rounded-full animate-bounce-gentle opacity-50" />
-      <div className="absolute bottom-32 left-20 w-6 h-6 bg-accent rounded-full animate-float opacity-70" />
-      <div className="absolute bottom-20 right-10 w-10 h-10 bg-highlight rounded-full animate-bounce-gentle opacity-50" />
+      {/* Organic Floating Elements */}
+      <div className="absolute top-20 left-10 w-16 h-16 bg-primary/40 rounded-full animate-organic-float opacity-70" />
+      <div className="absolute top-40 right-20 w-12 h-12 bg-secondary/50 rounded-full animate-leaf-sway opacity-60" />
+      <div className="absolute bottom-32 left-20 w-10 h-10 bg-accent/60 rounded-full animate-organic-float opacity-80" />
+      <div className="absolute bottom-20 right-10 w-14 h-14 bg-highlight/50 rounded-full animate-leaf-sway opacity-60" />
+      
+      {/* Additional organic shapes */}
+      <div className="absolute top-60 left-1/4 w-8 h-8 bg-primary/30 rounded-full animate-bounce-gentle opacity-50" />
+      <div className="absolute bottom-40 right-1/3 w-6 h-6 bg-secondary/40 rounded-full animate-organic-float opacity-60" />
       
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in-up">
@@ -28,7 +32,7 @@ const Hero = () => {
           Your Name
         </h1>
         <p className="font-poppins text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-          Creative Designer & Developer crafting beautiful digital experiences
+          Nature-inspired creative cultivating organic digital experiences
         </p>
         
         <Button 
